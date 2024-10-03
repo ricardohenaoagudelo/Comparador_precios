@@ -16,7 +16,7 @@ function comparePrices() {
   const adjustedCompetitorPrice = (competitorPrice / competitorConcentration) / 10;
   const adjustedOurPrice = (ourPrice / ourConcentration) / 10;
 
-  let competitorPriceAtOurConcentration = adjustedCompetitorPrice * ourConcentration;
+  let competitorPriceAtOurConcentration = adjustedCompetitorPrice * ourConcentration * 10;
   let resultMessage = '';
 
   if (competitorPriceAtOurConcentration < ourPrice) {
