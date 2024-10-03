@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador de Precios</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333333;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: #4CAF50;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #price-comparison-module {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388E3C;
+    }
+
+    #comparison-result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparador de Precios</h1>
+
+  <div id="price-comparison-module">
+    <h2>Comparar Productos</h2>
+
+    <div>
+      <label for="competitor-product">Producto Competidor:</label>
+      <input type="text" id="competitor-product" placeholder="Nombre del producto competidor">
+    </div>
+
+    <div>
+      <label for="competitor-price">Precio por Kg (Competidor):</label>
+      <input type="number" id="competitor-price" placeholder="Precio del producto competidor">
+    </div>
+
+    <div>
+      <label for="competitor-concentration">Concentración del Producto (%):</label>
+      <input type="number" id="competitor-concentration" placeholder="Concentración del producto competidor">
+    </div>
+
+    <div>
+      <label for="selected-product">Producto Nuestro:</label>
+      <select id="selected-product">
+        <option value="">Selecciona un producto</option>
+        <option value="AMOXIN 600">AMOXIN 600</option>
+        <option value="CIPROFLOX">CIPROFLOX</option>
+        <option value="FENIFLOR">FENIFLOR</option>
+        <option value="FOSMICYNA 90">FOSMICYNA 90</option>
+        <option value="TILCOMIX">TILCOMIX</option>
+        <option value="TILOMIX 250">TILOMIX 250</option>
+        <option value="TYLVASSYN">TYLVASSYN</option>
+        <option value="ESPELIN">ESPELIN</option>
+        <option value="DINAMIX 200">DINAMIX 200</option>
+        <option value="DINAMIX 800">DINAMIX 800</option>
+        <option value="DQCICLIN">DQCICLIN</option>
+        <option value="CLORDIAGRO">CLORDIAGRO</option>
+        <option value="LINCOX">LINCOX</option>
+        <option value="TRIMBAC">TRIMBAC</option>
+        <option value="NEOCYN">NEOCYN</option>
+        <option value="HALQUINOX 800">HALQUINOX 800</option>
+        <option value="HALQUINOX 500">HALQUINOX 500</option>
+        <option value="SAGAH">SAGAH</option>
+        <option value="DMB">DMB</option>
+        <!-- Añadir más productos según necesidad -->
+      </select>
+    </div>
+
+    <div>
+      <label for="our-price">Precio por Kg (Nuestro Producto):</label>
+      <input type="number" id="our-price" placeholder="Precio de nuestro producto">
+    </div>
+
+    <div>
+      <label for="our-concentration">Concentración del Producto (%):</label>
+      <input type="number" id="concentracion" placeholder="Concentración" readonly>
+    </div>
+
+    <button onclick="comparePrices()">Comparar Precios</button>
+
+    <div id="comparison-result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
