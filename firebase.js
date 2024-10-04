@@ -3,15 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore"; // Importa Firestore
 import { getAnalytics } from "firebase/analytics";
 
-// Your web app's Firebase configuration
+require('dotenv').config(); // Cargar las variables de entorno desde .env
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB20L6I6p4FdDSsz_SHNcjV4LmvDTn-QCo",
-  authDomain: "comparador-de-precios-a9997.firebaseapp.com",
-  projectId: "comparador-de-precios-a9997",
-  storageBucket: "comparador-de-precios-a9997.appspot.com",
-  messagingSenderId: "205661284753",
-  appId: "1:205661284753:web:455777bda5d3b1d5cb5230",
-  measurementId: "G-56CYTQ1WS7"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
